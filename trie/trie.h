@@ -68,5 +68,14 @@ public:
   void swap(trie_t &other);
 
 private:
+  size_t _size;
+  size_t _endCnt;
 
+  std::map<char, trie_t> _descendantsDict;
+
+  /**
+   * Helper method for lookups
+   * @param str
+   */
+  const trie_t* _reach(const std::string &str) const;
 };
